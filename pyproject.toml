@@ -16,3 +16,11 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/KirilStrezikozin/pyscanf"
 Issues = "https://github.com/KirilStrezikozin/pyscanf/issues"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+]
+
+[tool.pytest.ini_options]
+addopts = "-v"
