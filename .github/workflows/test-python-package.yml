@@ -24,10 +24,6 @@ jobs:
         python-version: '3.x'
     - name: Display Python version
       run: python3 -c "import sys; print(sys.version)"
-    - name: Build package
+    - name: Lint and test package
       run: |
-        make build
-        # - name: Publish package
-        #   uses: pypa/gh-action-pypi-publish@v1
-        #   with:
-        #     password: ${{ secrets.PYPI_API_TOKEN }}
+        make lint test
