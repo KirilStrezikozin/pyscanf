@@ -38,6 +38,7 @@ clean: venv
 	pyclean .
 	# rm -rf $(VENV)
 	rm -rf *.egg-info
+	rm -rf .pytest_cache
 	rm -rf dist
 
 .PHONY: build clean
