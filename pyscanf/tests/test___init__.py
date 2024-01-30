@@ -1,7 +1,7 @@
 # Copyright (c) 2024 kemplerart
 
 import pytest
-from .. import scanf
+from pyscanf import scanf
 
 
 class _stdin():
