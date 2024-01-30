@@ -2,7 +2,7 @@
 
 <p>
     <a href="https://github.com/KirilStrezikozin/pyscanf/releases"><img src="https://img.shields.io/github/release/KirilStrezikozin/pyscanf.svg" alt="release"></a>
-    <a href="https://github.com/KirilStrezikozin/pyscanf/actions"><img src="https://github.com/KirilStrezikozin/pyscanf/actions/workflows/python-publish.yml/badge.svg" alt="build"></a>
+    <a href="https://github.com/KirilStrezikozin/pyscanf/actions"><img src="https://github.com/KirilStrezikozin/pyscanf/actions/workflows/build.yml/badge.svg" alt="build"></a>
 </p>
 
 A Python package to read formatted input from the standard input in C style.
