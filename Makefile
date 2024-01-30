@@ -10,6 +10,7 @@ PIP_VENV = ./$(VENV)/bin/pip
 
 venv/bin/activate: requirements.txt
 	$(PYTHON) -m venv $(VENV)
+	$(PYTHON) -m pip install --upgrade pip
 	chmod +x ./$(VENV)/bin/activate
 	source ./$(VENV)/bin/activate
 	$(PIP_VENV) install -r requirements.txt
@@ -23,7 +24,7 @@ lint: venv
 test: venv
 	$(PYTHON_VENV) -m pytest
 
-build: venv
+build: clean lint test
 	rm -rf dist
 	$(PYTHON_VENV) -m build
 
@@ -36,6 +37,7 @@ upload: build
 clean: venv
 	pyclean .
 	# rm -rf $(VENV)
+	rm -rf *.egg-info
 	rm -rf dist
 
 .PHONY: build clean
