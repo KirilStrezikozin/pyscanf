@@ -33,9 +33,6 @@ def scanf(match: str, limit: int = 256) -> list[
     vals = []
 
     for fmt_spec in fmt_specs:
-        if fmt_spec[0] != '%':
-            raise TypeError("Invalid format specifier %s" % fmt_spec)
-
         cs = []
         tries = 0
         while tries < limit:
@@ -60,13 +57,11 @@ def scanf(match: str, limit: int = 256) -> list[
             }
 
             parse_func = parse_funcs.get(fmt_spec, None)
-            if parse_func is None:
-                raise TypeError("Unknown format specifier %s" % fmt_spec)
 
             try:
                 vals.append(parse_func(s))
                 break
-            except ValueError:
+            except (TypeError, ValueError):
                 raise ValueError(
                     "Invalid format specifier %s for %s" % (fmt_spec, s))
 

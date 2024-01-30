@@ -214,7 +214,7 @@ def test_scanf_suite_by_char(monkeypatch: pytest.MonkeyPatch,
 def test_scanf_suite_with_raises(monkeypatch: pytest.MonkeyPatch,
                                  capsys: pytest.CaptureFixture) -> None:
     test_case = """
-    56+10j vl232 vl232 vl232 1j+1
+    56+10j vl232 vl232 vl232 vl232 1j+1
     45.22 true
     """
 
@@ -225,13 +225,13 @@ def test_scanf_suite_with_raises(monkeypatch: pytest.MonkeyPatch,
     assert result == case and type(result) is type(case)
 
     fmt_spec = "foo"
-    match = "Invalid format specifier %s" % fmt_spec
-    with pytest.raises(TypeError, match=match):
+    match = "Invalid format specifier %s for %s" % (fmt_spec, "vl232")
+    with pytest.raises(ValueError, match=match):
         scanf(fmt_spec)
 
     fmt_spec = "%a"
-    match = "Unknown format specifier %s" % fmt_spec
-    with pytest.raises(TypeError, match=match):
+    match = "Invalid format specifier %s for %s" % (fmt_spec, "vl232")
+    with pytest.raises(ValueError, match=match):
         scanf(fmt_spec)
 
     fmt_spec = ""
