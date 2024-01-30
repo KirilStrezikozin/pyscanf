@@ -23,4 +23,7 @@ test = [
 ]
 
 [tool.pytest.ini_options]
-addopts = "-v"
+addopts = [
+    "-v",
+    "--import-mode=importlib",
+]

@@ -16,9 +16,27 @@ venv/bin/activate: requirements.txt
 
 venv: venv/bin/activate
 
+lint: venv
+	$(PYTHON_VENV) -m flake8 ./pyscanf/ --count --select=E9,F63,F7,F82 --show-source --statistics
+	$(PYTHON_VENV) -m flake8 ./pyscanf/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+test: venv
+	$(PYTHON_VENV) -m pytest
+
+build: venv
+	rm -rf dist
+	$(PYTHON_VENV) -m build
+
+upload_test: build
+	$(PYTHON_VENV) -m twine upload --repository testpypi dist/*
+
+upload: build
+	$(PYTHON_VENV) -m twine upload dist/*
+
 clean: venv
 	pyclean .
 	# rm -rf $(VENV)
+	rm -rf dist
 
 .PHONY: build clean
 
