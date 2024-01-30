@@ -1,9 +1,8 @@
 # pyscanf
 
 <p>
-    <a href="https://github.com/KirilStrezikozin/pyscanf/releases"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="python"></a>
     <a href="https://github.com/KirilStrezikozin/pyscanf/releases"><img src="https://img.shields.io/github/release/KirilStrezikozin/pyscanf.svg" alt="release"></a>
-    [![build](https://github.com/KirilStrezikozin/pyscanf/actions/workflows/python-publish.yml/badge.svg)](https://github.com/KirilStrezikozin/pyscanf/actions/workflows/python-publish.yml)
+    <a href="https://github.com/KirilStrezikozin/pyscanf/actions"><img src="https://github.com/KirilStrezikozin/pyscanf/actions/workflows/python-publish.yml/badge.svg" alt="build"></a>
 </p>
 
 A Python package to read formatted input from the standard input in C style.
